@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{38ED44C9-FDBC-4E03-B8D9-78123BD1048E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Test.Utilities</RootNamespace>
+    <AssemblyName>Test.Utilities</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EqualityTests.cs" />
+    <Compile Include="Equality\EqualityTester.cs" />
+    <Compile Include="Equality\MethodExtensions.cs" />
+    <Compile Include="Equality\Rules\GetHashCodeEqualReturns.cs" />
+    <Compile Include="Equality\Rules\ImplementsIEquatable.cs" />
+    <Compile Include="Equality\Rules\ImplementsMethod.cs" />
+    <Compile Include="Equality\Rules\IsTypeSealed.cs" />
+    <Compile Include="Equality\Rules\ITestRule.cs" />
+    <Compile Include="Equality\Rules\MethodReturns.cs" />
+    <Compile Include="Equality\Rules\OverloadsEqualityOperator.cs" />
+    <Compile Include="Equality\Rules\OverloadsInequalityOperator.cs" />
+    <Compile Include="Equality\Rules\OverridesEquals.cs" />
+    <Compile Include="Equality\Rules\OverridesGetHashCode.cs" />
+    <Compile Include="Equality\TypeAnalysis.cs" />
+    <Compile Include="Equality\ValueSemanticException.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
